@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class Counter extends StatefulWidget {
   const Counter({super.key});
