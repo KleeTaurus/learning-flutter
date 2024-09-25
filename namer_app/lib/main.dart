@@ -27,9 +27,12 @@ class MyApp extends StatelessWidget {
 
 class MyAppState extends ChangeNotifier {
   var current = WordPair.random();
+  var history = <WordPair>[];
 
   void getNext() {
+    history.insert(0, current);
     current = WordPair.random();
+
     notifyListeners();
   }
 
