@@ -7,6 +7,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<MaterialColor> colors = [
+      Colors.red,
+      Colors.blue,
+      Colors.green,
+      Colors.yellow,
+      Colors.orange,
+    ];
     const title = 'Horizontal List';
 
     return MaterialApp(
@@ -21,28 +28,15 @@ class MyApp extends StatelessWidget {
           child: ListView(
             // This next line does the trick.
             scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              Container(
-                width: 160,
-                color: Colors.red,
-              ),
-              Container(
-                width: 160,
-                color: Colors.blue,
-              ),
-              Container(
-                width: 160,
-                color: Colors.green,
-              ),
-              Container(
-                width: 160,
-                color: Colors.yellow,
-              ),
-              Container(
-                width: 160,
-                color: Colors.orange,
-              ),
-            ],
+            children: List.generate(
+              colors.length,
+              (index) {
+                return Container(
+                  width: 160,
+                  color: colors[index],
+                );
+              },
+            ),
           ),
         ),
       ),
